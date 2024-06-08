@@ -1,3 +1,7 @@
+* {
+  scrollbar-width: none;  /* Firefox */
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(61, 61, 61);
@@ -6,20 +10,118 @@ body {
   flex-direction: column;
   height: 100vh;
 }
+header {
+  background-color: rgb(45, 45, 45);
+  text-align: right;
+  font-family: Tiny5;
+  margin-top: -35px;
+  margin-right: -15px;
+}
+header h3 {
+  color: white;
+  font-size: 20px;
+  font-size: 30px;
+  padding-top: 30px;
+  padding-right: 70px;
+}
+
+img {
+  position: absolute;
+  top: 6%;
+  right: 10%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+}
+
+.container {
+  display: inline-block;
+}
+.navbar {
+  position: fixed;
+  top: 0px;
+  width: 150px;
+  background-color: black;
+  padding-left: 10px;
+  padding-right: 25px;
+  height: 100vh;
+  margin-left: -10px;
+  display: inline-block;
+}
+.navbar ul {
+  padding: 0;
+  text-align: center;
+}
+
+.navbar ul li a {
+  position: relative;
+  background-color: #545454;
+  top: 150px;
+  text-decoration: none;
+  color: #ffffff;
+  width: 140px;
+  display: inline-block;
+  padding: 10px;
+  transition: background-color 0.2s;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 15px;
+  margin-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar ul li a:hover {
+  background-color: rgb(74, 74, 74);
+  box-shadow: 0px 2px 4px black;
+}
+
+.newChat {
+  position: fixed;
+  top: 110px;
+  left: 13px;
+  background-color: rgb(0, 0, 255);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 10px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px black;
+}
+
+.newChat:hover {
+  background-color: rgb(0, 0, 200); /* color on hover */
+}
 
 .chatBot {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-end;  
   flex-grow: 1;
-  width: 100%;
+  width: calc(100% - 150px); 
+  margin-left: 150px; 
+  /* No need for margin-bottom anymore */
+}
+
+.chat-input-container {
+  /* Remove all the previous positioning rules */
+  display: flex;
+  justify-content: flex-end;
+  width: 100%; 
+  background-color: #2b2b2b;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .message-holder {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end; /* Align messages to the right */
   justify-content: flex-end;
   width: 100%;
   height: 100%;
@@ -44,25 +146,16 @@ body {
   word-wrap: break-word;
 }
 
-.chat-outgoing p {
+.chat-outgoing p { /* User messages */
   background-color: #162887;
-  align-self: flex-end;
   color: #fff;
+  align-self: flex-end; /* Ensure they stick to the right */
 }
 
-.chat-incoming p {
+.chat-incoming p { /* AI/Bot messages */
   background-color: #eaeaea;
-}
-
-.chat-input-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  background-color: #2b2b2b;
-  padding: 10px 0;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  align-self: flex-start; /* Optional: align to left for better visual distinction */
+  max-width: 40%;
 }
 
 .chat-bar {
@@ -74,6 +167,7 @@ body {
   padding: 10px;
   border-radius: 50px;
   box-sizing: border-box;
+  margin-right: 10px
 }
 
 .message-input {

@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AiteAI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
   </head>
+
+  <header>
+    <img class='setting'src="static\settingsIcon.png" alt="Settings">
+    <h3>
+      AiteAI
+    </h3>
+    
+  </header>
+
+  <div class="container">
+    <div class="back">
+      
+    </div>
+    <nav class="navbar">
+      <ul>
+        <button class="newChat">New Chat</button>
+        <li><a href="#introduction">History 1</a></li>
+        <li><a href="#introduction">History 2</a></li>
+      </ul>
+    </nav>
+  </div>
+
   <body class="flex flex-col h-screen">
     <div class="chatBot">
       <div id="messageHolder" class="message-holder">
