@@ -188,7 +188,7 @@ body {
   border-radius: 20px; /* Curved corners */
   cursor: pointer; /* Pointer cursor on hover */
   position: absolute;
-  bottom: -240px; /* Position relative to the container's bottom */
+  bottom: -180px; /* Position relative to the container's bottom */
   left: 50%; /* Center the button horizontally */
   transform: translateX(-50%);
   white-space: nowrap; /* Prevent text wrapping */
