@@ -12,38 +12,22 @@ body {
 
 .container {
   display: flex;
+  flex-direction: column; /* Change to column to stack elements vertically */
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
-.large-letter {
-  font-size: 150px; /* Large font size */
-  color: white;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-}
-
 .a {
-  right: 100%; 
+  right: 50%; /* Positioning for "A" */
+  transform: translateX(50%);
   animation: slideInFromRight 2s ease forwards, stayVisible 1s 2s forwards, slideOutToLeft 1s 2s ease forwards;
 }
 
 .i {
-  left: 100%; 
+  left: 50%; /* Positioning for "I" */
+  transform: translateX(-50%);
   animation: slideInFromLeft 2s ease forwards, stayVisible 1s 2s forwards, slideOutToRight 1s 2s ease forwards;
-}
-
-.aite {
-  font-size: 125px; /* Adjust as needed */
-  color: white;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) scale(0.5);
-  animation: appear 1s 3s forwards, grow 1s 3s forwards;
 }
 
 /* Animations */
@@ -119,3 +103,98 @@ body {
     transform: translateY(-50%) scale(1);
   }
 }
+
+.large-letter {
+  font-size: 200px; /* Large font size */
+  color: transparent; /* Transparent text */
+  -webkit-text-stroke: 1px white; /* Thin white border */
+  text-stroke: 1px white; /* Thin white border */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.letter {
+  animation: slideInAndOut 2s ease forwards, stayVisible 1s 2s forwards;
+}
+
+.aite {
+  font-size: 200px; /* Adjust as needed */
+  color: transparent; /* Transparent text */
+  -webkit-text-stroke: 1px white; /* Thin white border */
+  text-stroke: 1px white; /* Thin white border */
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(0.5);
+  animation: appear 1s 2s forwards, grow 1s 2s forwards;
+}
+
+/* Animations */
+@keyframes slideInAndOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-50px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(50px);
+  }
+}
+
+@keyframes stayVisible {
+  0%, 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: translateY(-50%) scale(0.5);
+  }
+  100% {
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+/* Button Styles */
+.blue-button {
+  margin-top: 50px; /* Space between text and button */
+  padding: 10px 20px; /* Adjusted padding */
+  font-size: 16px; /* Button font size */
+  background-color: blue; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  border-radius: 20px; /* Curved corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  position: absolute;
+  bottom: -240px; /* Position relative to the container's bottom */
+  left: 50%; /* Center the button horizontally */
+  transform: translateX(-50%);
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.blue-button:hover {
+  background-color: darkblue; /* Darker blue on hover */
+}
+
