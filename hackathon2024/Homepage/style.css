@@ -225,6 +225,48 @@ body {
   animation: fadeIn 1s forwards 2s; /* Fade in after 1 second */
 }
 
+.dot-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure dots are behind everything */
+}
+
+.dot {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: lightblue;
+  border-radius: 50%;
+  animation: moveDot linear infinite;
+}
+
+@keyframes moveDot {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(200px, 100px);
+  }
+  50% {
+    transform: translate(-100px, 300px);
+  }
+  75% {
+    transform: translate(100px, -200px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+
+
+
+
+
 
 
 
