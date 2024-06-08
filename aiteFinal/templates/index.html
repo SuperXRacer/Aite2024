@@ -2,47 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,
-                                   initial-scale=1.0" />
-    <title>Chatbot using Gemini | GeeksforGeeks</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script
-       src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
-    <style type="text/tailwindcss">
-      @layer base {
-        ul {
-          list-style-type: circle;
-        }
-        ol {
-          list-style-type: decimal;
-        }
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AiteAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
   </head>
-  <body class="flex flex-col justify-between h-screen">
-    <div>
-      <p class="text-xl font-bold text-center text-green-500">
-        GeeksforGeeks Chatbot - Gemini
-      </p>
-      <div class="overflow-y-auto" style="max-height: 80vh">
-        <div id="messageHolder" class="flex flex-col m-4"></div>
+  <body class="flex flex-col h-screen">
+    <div class="chatBot">
+      <div id="messageHolder" class="message-holder">
+        <ul class="chatbox">
+          <li class="chat-incoming chat">
+            <p>Hey! How can I assist you today?</p>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="flex flex-row m-4">
+
+    <div class="chat-input-container">
       <input
         type="text"
-        class="flex-1 border rounded-md m-2 border-green-600 
-               p-2 outline-none ring-2 ring-green-600 
-               border-transparent"
+        class="chat-bar message-input"
         placeholder="Chat..."
         name="chat"
         id="chat"
       />
-      <button id="btn" class="m-2 bg-blue-500 p-2 
-                              rounded-md text-white">
-        Send
-      </button>
+      <button id="btn" class="send-button">Send</button>
     </div>
+    
     <script type="importmap">
       {
         "imports": {
@@ -50,7 +36,6 @@
         }
       }
     </script>
-    <script type="module" src="{{ url_for('static', 
-                               filename='main.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='main.js') }}"></script>
   </body>
 </html>
