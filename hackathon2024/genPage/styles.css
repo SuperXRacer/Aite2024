@@ -97,10 +97,11 @@ img {
 .container {
   display: inline-block;
 }
+
 .chat-bar {
   position: fixed;
   bottom: 10px;
-  left: 220px; /* width of the sidebar */
+  left: 35%; /* width of the sidebar */
   width: 700px; /* total width of the window minus the width of the sidebar */
   background-color: #2b2b2b;
   color: white;
@@ -210,3 +211,42 @@ img {
   background-color: white !important;
 }
   
+.chatBot {
+  margin-left: 200px;
+  margin-top: 10px;
+  overflow: hidden;
+  width: 85%;
+  overflow-y: clip;
+  height: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.chatbox {
+  padding: 15px;
+  list-style: none;
+  overflow-y: auto;
+  height: 400px;
+}
+
+.chatbox li {
+  margin-bottom: 10px;
+}
+ 
+.chat p {
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 40%;
+  word-wrap: break-word;
+}
+
+.chat-outgoing p {
+  background-color: #162887;
+  align-self: flex-end;
+  color: #fff;
+}
+ 
+.chat-incoming p {
+  background-color: #eaeaea;
+}
