@@ -7,11 +7,13 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  position: relative; /* Needed for the pseudo-element */
+  overflow: hidden; /* Hide the pseudo-element overflow */
 }
 
 .container {
   display: flex;
-  flex-direction: column; /* Change to column to stack elements vertically */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -176,7 +178,15 @@ body {
   }
 }
 
-/* Button Styles */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .blue-button {
   margin-top: 50px; /* Space between text and button */
   padding: 10px 20px; /* Adjusted padding */
@@ -191,9 +201,30 @@ body {
   left: 50%; /* Center the button horizontally */
   transform: translateX(-50%);
   white-space: nowrap; /* Prevent text wrapping */
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 1s forwards 2s; /* Fade in after 2 seconds */
 }
 
 .blue-button:hover {
   background-color: darkblue; /* Darker blue on hover */
 }
+
+.top-center-image-container {
+  width: 100%; /* Take full width of the viewport */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  position: absolute;
+  top: 140px; /* Adjust as needed */
+  z-index: 1; /* Ensure the image is above the text */
+}
+
+.top-center-image {
+  width: 120px; /* Reduce the width of the image */
+  height: auto; /* Maintain aspect ratio */
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 1s forwards 2s; /* Fade in after 1 second */
+}
+
+
+
 
